@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ryantranvn/mean/issues"
   },
-  "homepage": "https://github.com/ryantranvn/mean#readme"
+  "homepage": "https://github.com/ryantranvn/mean#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
