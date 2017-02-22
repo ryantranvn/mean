@@ -2,6 +2,8 @@ var express = require("express");
 var path = require('path');
 var bodyParser = require("body-parser");
 
+var routeApiSite = require(path.join(__dirname, 'app/site/route'));
+
 // environment
 	var config = require('./config/config');
 
@@ -28,7 +30,19 @@ var bodyParser = require("body-parser");
 	server.use(bodyParser.json());       // to support JSON-encoded bodies
 	server.use(bodyParser.urlencoded({ extended: true }));  // to support URL-encoded bodies	
 
-// app start
+// set static
+	site.use('/pubs', express.static(path.join(__dirname, 'publics')));
+	site.use('/app', express.static(path.join(__dirname, 'app')));
+
+// route
+	// site.use('/', routeApiSite);
+
+	site.get('*', function(req, res) {
+		res.sendFile(path.join(__dirname, 'app/site', 'index.html'));
+    });
+	
+
+// apps start
 	site.listen(portSite, host, function() {
 		console.log('Started site app on port ' + portSite);
 	});
