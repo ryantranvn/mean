@@ -41,7 +41,6 @@ var routeApiSite = require(path.join(__dirname, 'app/site/route'));
 		res.sendFile(path.join(__dirname, 'app/site', 'index.html'));
     });
 	
-
 // apps start
 	site.listen(portSite, host, function() {
 		console.log('Started site app on port ' + portSite);

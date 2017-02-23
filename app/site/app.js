@@ -30,8 +30,8 @@ var siteApp = angular.module('siteApp', ['ngRoute']);
 				controllerAs: 'vm',
 				templateUrl: baseUrl + '/home.html'
 			})
-			.when('/', {
-				controller: 'HomeController',
+			.when('/login', {
+				controller: 'LoginController',
 				controllerAs: 'vm',
 				templateUrl: baseUrl + '/login.html'
 			})

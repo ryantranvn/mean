@@ -3,6 +3,6 @@ siteApp.controller('HomeController', function(){
 
 	vm.error = false;
 	vm.activeNav = 'home'
-	vm.message = "Helu";
+	vm.message = "Helu, this is home page";
 	
 });
