@@ -35,8 +35,8 @@ var routeApiSite = require(path.join(__dirname, 'app/site/route'));
 	site.use('/app', express.static(path.join(__dirname, 'app')));
 
 // route
-	// site.use('/', routeApiSite);
-
+	site.use('/', routeApiSite);
+	
 	site.get('*', function(req, res) {
 		res.sendFile(path.join(__dirname, 'app/site', 'index.html'));
     });

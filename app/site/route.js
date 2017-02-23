@@ -8,9 +8,9 @@ var portSite = config.portSite();
 
 
 // home
-	router.get('/', function(req, res, next) {
-		res.sendFile(path.join(__dirname, '../site', 'index.html'));
-	});
+	// router.get('/', function(req, res, next) {
+	// 	res.sendFile(path.join(__dirname, '../site', 'index.html'));
+	// });
 
 
 

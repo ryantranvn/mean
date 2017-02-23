@@ -1,13 +1,8 @@
-'use strict';
-
-siteApp.controller('navController', ['$scope', function($scope) {
-	$scope.activeNav = 'home';
-}]);
-
-siteApp.controller('HomeController', function($http){
+siteApp.controller('HomeController', function(){
 	var vm = this;
 
+	vm.error = false;
+	vm.activeNav = 'home'
 	vm.message = "Helu";
-
-	return true;
+	
 });
