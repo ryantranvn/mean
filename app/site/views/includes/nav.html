@@ -1,17 +1,18 @@
-<div class="header clearfix">
-	<nav>
-  		<ul class="nav nav-pills pull-right">
-  			<li role="presentation" class="{{vm.activeNav == 'home' ? 'active' : ''}}">
-  				<a href="./">Home</a>
-  			</li>
-  			<li role="presentation" class="{{vm.activeNav == 'login' ? 'active' : ''}}">
-  				<a href="./login">Login</a>
-  			</li>
-  			<li role="presentation" class="{{vm.activeNav == 'register' ? 'active' : ''}}">
-  				<a href="./register">Register</a>
-  			</li>
-  			<li role="presentation" class="{{vm.activeNav == 'contact' ? 'active' : ''}}">
-  				<a href="./contact">Contact</a>
-  			</li>
-  		</ul>
-	</nav>
+<div layout="row" layout-wrap>
+    <md-content flex="100" class="md-padding">
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="/">
+                <img class="logo" src="pubs/common/images/logo-client.png" alt="">
+            </md-nav-item>
+            <md-nav-item md-nav-href="/" name="home">
+                Home
+            </md-nav-item>
+            <md-nav-item md-nav-href="/signin" name="signin">
+                    Sign In
+            </md-nav-item>
+            <md-nav-item md-nav-href="/signup" name="signup">
+                Sign Up
+            </md-nav-item>
+        </md-nav-bar>
+    </md-content>
+</div>

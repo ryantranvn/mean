@@ -1,8 +1,7 @@
-siteApp.controller('HomeController', function(){
-	var vm = this;
+siteApp.controller('HomeController', ['$scope', 'WHAT', function($scope, WHAT){
 
-	vm.error = false;
-	vm.activeNav = 'home'
-	vm.message = "Helu, this is home page";
-	
-});
+	$scope.what = WHAT;
+	$scope.currentNavItem = 'home';
+	$scope.error = false;
+
+}]);

@@ -1,44 +1,50 @@
-var siteApp = angular.module('siteApp', ['ngRoute']);
+// Create application
+	var siteApp = angular.module('siteApp', ['ngMaterial', 'ngRoute']);
+// Constants
+	siteApp.constant('WHAT', {
+		'baseUrl': './'
+	});
+
+	var viewsUrl = './app/site/views';
 // navigator directive
 	siteApp.directive("nav", function() {
 
-		var baseUrl = './app/site/views';
-
 		return {
 			restrict : "A",
-			templateUrl : baseUrl + '/includes/nav.html'
+			templateUrl : viewsUrl + '/includes/nav.html'
 		}
 	});
 // footer directive
 	siteApp.directive("footer", function() {
 
-		var baseUrl = './app/site/views';
-
 		return {
 			restrict : "A",
-			templateUrl : baseUrl + '/includes/footer.html'
+			templateUrl : viewsUrl + '/includes/footer.html'
 		}
 	});
 // route
 	siteApp.config(function($routeProvider, $locationProvider) {
 
-		var baseUrl = './app/site/views';
-
 		$routeProvider
 			.when('/', {
 				controller: 'HomeController',
 				controllerAs: 'vm',
-				templateUrl: baseUrl + '/home.html'
+				templateUrl: viewsUrl + '/home.html'
 			})
-			.when('/login', {
-				controller: 'LoginController',
+			.when('/home', {
+				controller: 'HomeController',
 				controllerAs: 'vm',
-				templateUrl: baseUrl + '/login.html'
+				templateUrl: viewsUrl + '/home.html'
+			})
+			.when('/signin', {
+				controller: 'SigninController',
+				controllerAs: 'vm',
+				templateUrl: viewsUrl + '/signin.html'
 			})
 			.when('/404', {
 				controller: 'ErrorController',
 				controllerAs: 'vm',
-				templateUrl: baseUrl + '/errors/404.html'
+				templateUrl: viewsUrl + '/errors/404.html'
 			});
 
 		$routeProvider.otherwise({
