@@ -2,7 +2,6 @@ var express = require("express");
 var path = require('path');
 var bodyParser = require("body-parser");
 
-var routeApiSite = require(path.join(__dirname, 'app/site/route'));
 
 // environment
 	var config = require('./config/config');
@@ -34,12 +33,20 @@ var routeApiSite = require(path.join(__dirname, 'app/site/route'));
 	site.use('/pubs', express.static(path.join(__dirname, 'publics')));
 	site.use('/app', express.static(path.join(__dirname, 'app')));
 
+	server.use('/pubs', express.static(path.join(__dirname, 'publics')));
+	server.use('/app', express.static(path.join(__dirname, 'app')));
 // route
-	site.use('/', routeApiSite);
-	
 	site.get('*', function(req, res) {
 		res.sendFile(path.join(__dirname, 'app/site', 'index.html'));
     });
+
+    server.get('/admin', function(req, res) {
+		res.sendFile(path.join(__dirname, 'app/server', 'index.html'));
+    });
+    server.get('*', function(req, res) {
+		res.sendFile(path.join(__dirname, 'app/server', 'index.html'));
+    });
+	
 	
 // apps start
 	site.listen(portSite, host, function() {
